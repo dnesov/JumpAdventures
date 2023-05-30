@@ -1,5 +1,5 @@
 # Jump Adventures
-This is the original source code repository for the platforming game Jump Adventures.
+This is the original source code repository for the platforming game Jump Adventures as well as my own FMOD bindings for Godot Mono (Source/GodotFmod).
 
 ## Why?
 I never understood why game developers hide their code for singleplayer games, especially for ones that don't use proprietary SDKs or APIs. My position is that its highly unlikely that I invented something unique, so why not share the source code, so others can freely do whatever they want to do?
