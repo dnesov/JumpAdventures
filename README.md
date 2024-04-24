@@ -1,4 +1,6 @@
-![Jump Adventures Header](./media/repo_header.png)
+<p align="center">
+  <img src="./media/repo_header.png">
+</p>
 
 # Jump Adventures
 This is a repository containing source code and other scripts used in [Jump Adventures](https://store.steampowered.com/app/2221130/Jump_Adventures/), excluding art assets and binaries that cannot be licensed under BSD-3.
