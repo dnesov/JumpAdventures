@@ -1,0 +1,55 @@
+<Project Sdk="Godot.NET.Sdk/3.3.0">
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <RootNamespace>JumpAdventures</RootNamespace>
+        <LangVersion>10</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Ceras" Version="4.1.7" />
+        <PackageReference Include="ImGui.NET" Version="1.86.0" />
+        <PackageReference Include="YamlDotNet" Version="11.2.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <!-- https://jeremybytes.blogspot.com/2020/05/cross-platform-build-events-in-net-core.html -->
+
+        <!-- Steamworks.NET -->
+        <Reference Include="Steamworks.NET, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <Link>Steamworks.NET.dll</Link>
+            <HintPath Condition=" '$(OS)' == 'Windows_NT' ">lib/steam/Windows-x64/Steamworks.NET.dll</HintPath>
+            <HintPath Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">lib/steam/OSX-Linux-x64/Steamworks.NET.dll</HintPath>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Reference>
+
+        <Content Include="lib/steam/Windows-x64/steam_api64.dll" Condition=" '$(OS)' == 'Windows_NT' ">
+            <Link>steam_api64.dll</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+
+        <Content Include="lib/steam/OSX-Linux-x64/libsteam_api.so" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">
+            <Link>libsteam_api.so</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <!-- /Steamworks.NET -->
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="bin/fmod/linux/*.*" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">
+            <Link>%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="bin/fmod/windows/*.*" Condition=" '$(OS)' == 'Windows_NT' ">
+            <Link>%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="bin/discord/linux/*.*" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">
+            <Link>%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="bin/discord/windows/*.*" Condition=" '$(OS)' == 'Windows_NT' ">
+            <Link>%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+</Project>
+  

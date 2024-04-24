@@ -1,0 +1,31 @@
+# Godot-specific ignores
+.import/
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+
+# Other garbage
+.uuid
+mono_crash.*
+.idea/
+.vs/
+imgui.ini
+
+bin/
+
+
+output.txt
+*.mlpd
+
+*.reapeaks
+steam_appid.txt
+
+godot-bin/
+
+Builds/
+Output/
+.env

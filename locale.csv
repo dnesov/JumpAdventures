@@ -1,0 +1,143 @@
+keys,en,ru,pl,uk,de,nl
+UI_MENU_PLAY,Play Game,Начать Игру,Rozpocznij Grę,Почати Гру,Spiel starten,Spel spelen
+UI_MENU_CUSTOMIZE,Customize,Кастомизация,Dostosuj,Кастомізація,UI_MENU_CUSTOMIZE,Aanpassen
+UI_MENU_EDITOR,Level Editor,Редактор,Edytor,Редактор,Editor,Editor
+UI_MENU_THEARCHIVE,The Archive,Архив,Archiwum,Архів,UI_MENU_THEARCHIVE,Het Archief
+UI_MENU_SETTINGS,Settings,Настройки,Ustawienia,Налаштування,Einstellungen,Instellingen
+UI_MENU_EXTRAS,Extras,Дополнения,Dodatki,Додатки,UI_MENU_EXTRAS,Extra's
+UI_MENU_STATS,Statistics,Статистика,Statystyki,Статистика,UI_MENU_STATS,UI_MENU_STATS
+UI_MENU_CREDITS,Credits,Авторы,Autorzy,Автори,Autoren,Auteurs
+UI_MENU_EXIT,Exit,Выход,Wyjście,Вихід,UI_MENU_EXIT,Uitgang
+UI_MENU_NAVIGATION,Navigation,Выбор,Wybór,Вибір,UI_MENU_NAVIGATION,
+UI_MENU_CONFIRM,Confirm,Подтвердить,Podtwierdzić,Підтвердження,UI_MENU_CONFIRM,
+UI_MENU_PLAY_HINT,Start an official or custom adventure.,Начать игру в кампанию или пользовательские уровни.,"Zacznij grę na oficjalnych światach, lub poziomach społeczności.","Розпочати гру в офіційних світах, або рівнях спільноти.",UI_MENU_PLAY_HINT,Start een officieel of aangepast avontuur.
+UI_MENU_EDITOR_HINT,Create your own levels.,UI_MENU_EDITOR_HINT,Stwórz własne poziomy.,Створюй свої рівні.,UI_MENU_EDITOR_HINT,
+UI_MENU_SETTINGS_HINT,Change your preferences.,Сменить настройки игры.,Zmień ustawienia gry.,Змінити налаштування гри.,UI_MENU_SETTINGS_HINT,Wijzig uw voorkeuren.
+UI_MENU_CREDITS_HINT,See authors and attributions.,Авторы игры и лицензионные соглашения.,Zobacz autorów i klauzule licencyjne.,Автори та ліцензії.,UI_MENU_CREDITS_HINT,UI_MENU_CUSTOMIZE_HINT
+UI_MENU_CUSTOMIZE_HINT,Customize your character.,Настроить своего персонажа.,Dostosuj własną postać.,Налаштуй свого персонажа.,UI_MENU_EXTRAS_HINT,Extra inhoud voor het spel.
+UI_MENU_EXTRAS_HINT,Additional content for the game.,Доп. контент для игры.,Dodatkowa zawartość gry.,Додатковий контент гри.,UI_MENU_EXTRAS_HINT,Extra inhoud voor het spel.
+UI_MENU_EXIT_HINT,Exit the game to the desktop.,Выйти на рабочий стол.,Wróć do pulpitu.,Повернутися до робочого столу.,UI_MENU_EXIT_HINT,Sluit het spel af naar het bureaublad.
+UI_MENU_BACK,Back,Назад,Wróć,Назад,UI_MENU_BACK,Rug
+UI_COMINGSOON,Coming Soon!,Скоро Доступно!,Dostępne Wkrótce!,Скоро Доступне!,UI_COMINGSOON,UI_COMINGSOON
+UI_MENU_WORLDSELECT,World Select,Выбор Мира,Wybór Świata,Вибір Світу,UI_MENU_WORLDSELECT,
+UI_GAME_RESTART,Press {0} to restart!,Нажми {0} чтобы начать заново!,Naciśnij {0} by zacząć ponownie!,Натисни {0} щоб почати знову!,UI_GAME_RESTART,
+UI_GAME_RESTART_GAMEPAD,Press [b]X[/b] to restart!,UI_GAME_RESTART_GAMEPAD,UI_GAME_RESTART_GAMEPAD,UI_GAME_RESTART_GAMEPAD,UI_GAME_RESTART_GAMEPAD,
+UI_GAME_RESTART_TOUCH,Tap anywhere to restart!,UI_GAME_RESTART_TOUCH,UI_GAME_RESTART_TOUCH,UI_GAME_RESTART_TOUCH,UI_GAME_RESTART_TOUCH,
+UI_SETTINGS_SECTION_GENERAL,General,Общие,Ogólne,Загальне,UI_SETTINGS_SECTION_GENERAL,
+UI_SETTINGS_LANGUAGE,Language,Язык,Język,Мова,UI_SETTINGS_LANGUAGE,
+UI_SETTINGS_TIMER,Timer,Таймер,Stoper,Таймер,UI_SETTINGS_TIMER,UI_SETTINGS_TIMER
+UI_SETTINGS_RICHPRESENCE,Rich Presence,"""Rich Presence""","""Rich Presence""","""Rich Presence""",UI_SETTINGS_RICHPRESENCE,
+UI_SETTINGS_SECTION_VIDEO,Video,Видео,Wideo,Відео,UI_SETTINGS_SECTION_VIDEO,
+UI_SETTINGS_RESOLUTION,Resolution,Разрешение,Roździelczość,Здатність Єкрану,UI_SETTINGS_RESOLUTION,
+UI_SETTINGS_QUALITY,Graphics Quality,Режим графики,Tryb grafiki,Режим графіки,UI_SETTINGS_QUALITY,
+UI_SETTINGS_QUALITY_QUALITY,Quality,Качество,Detale,Якість,UI_SETTINGS_QUALITY_QUALITY,
+UI_SETTINGS_QUALITY_PERFORMANCE,Performance,Производительность,Wydajność,Видайність,UI_SETTINGS_QUALITY_PERFORMANCE,
+UI_SETTINGS_VSYNC,VSync,Vsync,VSync,VSync,VSync,
+UI_SETTINGS_FPSLIMIT,FPS Limit,Лимит FPS,Limit FPS,Ліміт FPS,UI_SETTINGS_FPSLIMIT,UI_SETTINGS_FPSLIMIT
+UI_SETTINGS_FULLSCREEN,Fullscreen,Полный Экран,Tryb Pełnoekranowy,Повне Зображення,UI_SETTINGS_FULLSCREEN,
+UI_SETTINGS_SECTION_AUDIO,Audio,Звук,Dźwięk,Звук,UI_SETTINGS_SECTION_AUDIO,
+UI_SETTINGS_MASTER_VOL,Master Volume,Общая Громкость,Głośność Ogólna,Загальна Гучність,UI_SETTINGS_MASTER_VOL,
+UI_SETTINGS_SFX_VOL,SFX Volume,Громкость эффектов,Głośność Efektów,Гучність Ефектів,UI_SETTINGS_SFX_VOL,
+UI_SETTINGS_MUSIC_VOL,Music Volume,Громкость Музыки,Głośność muzyki,Гучність Музики,UI_SETTINGS_MUSIC_VOL,
+UI_SETTINGS_OPENDATAFOLDER,Open data folder,Открыть папку с данными,Otwórz folder danych,Відкрити папку з даними,,
+UI_MENU_RESETPROGRESS,Reset Progress,Сбросить прогресс,Resetuj postęp,Скинути прогрес,,
+UI_SETTINGS_SECTION_ACCESSIBILITY,Accessibility,Доступность,Dostępność,Доступність,,
+UI_SETTINGS_CONTROLLERVIBRATION,Controller Vibration,Вибр. Контроллера,Wibracja Kontrolera,Вібрація Контролера,,
+UI_SETTINGS_SCREENSHAKE,Screen Shake,Тряска Екрана,Drżenie Ekranu,Тремтіння Екрана,,
+UI_SETTINGS_FLASHING,Screen Flashing,Мигание Экрана,Miganie Ekranu,Миготіння Екрану,,
+,,,,,,
+UI_OPTION_ON,On,Вкл,Wł.,Увімк.,,
+UI_OPTION_OFF,Off,Выкл,Wył.,Вимк.,,
+,,,,,,
+,,,,,,
+UI_LOADING,Loading,Загрузка,Wczytywanie,Завантаження,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+UI_LEVELCOMPLETE_TITLE,Level\nComplete!,Уровень\nПройден!,Poziom\nUkończony!,Рівень\nЗавершенно!,,
+UI_LEVELCOMPLETE_ATTEMPTS,Attempts:,Попыток:,Prób:,Спроб:,,
+UI_LEVELCOMPLETE_ESSENCE,Essence:,Эссенция:,Esencja:,Есенція:,,
+UI_LEVELCOMPLETE_TIME,Time:,Время:,Czas:,Час:,,
+UI_LEVELCOMPLETE_HINT,"Hold [b]W[/b] or [b]Space[/b] to continue.
+Press [b]Esc[/b] to return to menu.","Удерживай [b]W[/b] или [b]Пробел[/b] чтобы продолжить.
+Нажми [b]Esc[/b] чтобы вернутся в меню.","Utrzymuj [b]W[/b] lub [b]Spację[/b] aby kontynuować.
+Naciśnij [b]Esc[/b] aby wrócić do menu.","Утримуй [b]W[/b] або [b]Пробіл[/b], щоб продовжити.
+Натисни [b]Esc[/b], щоб повернутися до меню.",,
+UI_LEVELCOMPLETE_HINT_XBOX,"Hold [img=16]res://Assets/UI/ButtonPrompts/xbox_a.png[/img] to continue.
+Press [img=16]res://Assets/UI/ButtonPrompts/xbox_b.png[/img] to return to menu.","Удерживай [b]W[/b] или [b]Пробел[/b] чтобы продолжить.
+Нажми [b]Esc[/b] чтобы вернутся в меню.","Utrzymuj [b]W[/b] lub [b]Spację[/b] aby kontynuować.
+Naciśnij [b]Esc[/b] aby wrócić do menu.","Утримуй [b]W[/b] або [b]Пробіл[/b], щоб продовжити.
+Натисни [b]Esc[/b], щоб повернутися до меню.",,
+,,,,,,
+UI_LEVELCOMPLETE_CONTINUE,Continue,Продолжить,Kontynuuj,Продовжити,,
+,,,,,,
+,,,,,,
+UI_TUTORIAL_MOVE,[img=24]res://Assets/UI/ButtonPrompts/New/a.png[/img] [img=24]res://Assets/UI/ButtonPrompts/New/d.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/arrow_left.png[/img] [img=24]res://Assets/UI/ButtonPrompts/New/arrow_right.png[/img]\nMovement,[img=24]res://Assets/UI/ButtonPrompts/New/a.png[/img] [img=24]res://Assets/UI/ButtonPrompts/New/d.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/arrow_left.png[/img] [img=24]res://Assets/UI/ButtonPrompts/New/arrow_right.png[/img]\nПередвижение,[img=24]res://Assets/UI/ButtonPrompts/New/a.png[/img] [img=24]res://Assets/UI/ButtonPrompts/New/d.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/arrow_left.png[/img] [img=24]res://Assets/UI/ButtonPrompts/New/arrow_right.png[/img]\nRuch,[img=24]res://Assets/UI/ButtonPrompts/New/a.png[/img] [img=24]res://Assets/UI/ButtonPrompts/New/d.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/arrow_left.png[/img] [img=24]res://Assets/UI/ButtonPrompts/New/arrow_right.png[/img]\nРух,,
+UI_TUTORIAL_JUMP,[img=32]res://Assets/UI/ButtonPrompts/New/space.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/w.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/arrow_up.png[/img]\nJump,[img=32]res://Assets/UI/ButtonPrompts/New/space.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/w.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/arrow_up.png[/img]\nПрыжок,[img=32]res://Assets/UI/ButtonPrompts/New/space.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/w.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/arrow_up.png[/img]\nSkok,[img=32]res://Assets/UI/ButtonPrompts/New/space.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/w.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/arrow_up.png[/img]\nСтрибок,,
+UI_TUTORIAL_RESTART,[img=24]res://Assets/UI/ButtonPrompts/New/r.png[/img]\nRestart,[img=24]res://Assets/UI/ButtonPrompts/New/r.png[/img]\nНачать Заново,[img=24]res://Assets/UI/ButtonPrompts/New/r.png[/img]\nRozpocząć od nowa,[img=24]res://Assets/UI/ButtonPrompts/New/r.png[/img]\nРестарт,,
+UI_RUNE_SEASIDE,"[i]""Seaside""[/i]",[i]”Приморье”[/i],[i]”Wybrzeża”[/i],[i]”Узбережжя”[/i],,
+UI_TUTORIAL_MOVE_XBOX,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_dpad_horizontal.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/xbox_ls.png[/img]\nMovement,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_dpad_horizontal.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/xbox_ls.png[/img]\nПередвижение,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_dpad_horizontal.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/xbox_ls.png[/img]\nRuch,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_dpad_horizontal.png[/img] | [img=24]res://Assets/UI/ButtonPrompts/New/xbox_ls.png[/img]\nРух,,
+UI_TUTORIAL_JUMP_XBOX,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_a.png[/img]\nJump,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_a.png[/img]\nПрыжок,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_a.png[/img]\nSkok,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_a.png[/img]\nСтрибок,,
+UI_TUTORIAL_RESTART_XBOX,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_x.png[/img]\nRestart,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_x.png[/img]\nНачать Заново,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_x.png[/img]\nRozpocząć od nowa,[img=24]res://Assets/UI/ButtonPrompts/New/xbox_x.png[/img]\nРестарт,,
+,,,,,,
+,,,,,,
+UI_GAMEMODE_SANDBOX,Sandbox Mode,,,,,
+UI_GAMEMODE_CHALLENGE,Challenge Mode,,,,,
+UI_FRAGMENT_COLLECTED,Fragment Collected!,Фрагмент Получен!,Znaleziono Fragment!,Фрагмент Отримано!,UI_FRAGMENT_COLLECTED,
+UI_CUSTOMIZATION_SKIN,Skin,Скин,Skórka,Скін,,
+UI_CUSTOMIZATION_COLOR,Color,Цвет,Kolor,Колір,,
+UI_CUSTOMIZATION_TRAIL,Trail,След,Ścieżka,Слід,,
+UI_UNLOCKREQ_WORLDCOMPLETE_SEASIDE,Complete [color=#7dd8ff][b]Seaside[/b][/color] to unlock this item.,Пройди [color=#7dd8ff][b]Взморье[/b][/color] чтобы разблокировать этот предмет.,Ukończ [color=#7dd8ff][b]Wybrzeża[/b][/color] aby odblokować ten przedmiot.,Пройди [color=#7dd8ff][b]Узбережжя[/b][/color] щоб розблокувати цей предмет.,,
+UI_UNLOCKREQ_WORLDCOMPLETE_FORESTS,Complete [color=#7dff83][b]Forests[/b][/color] to unlock this item.,Пройди [color=#7dff83][b]Леса[/b][/color] чтобы разблокировать этот предмет.,Ukończ [color=#7dff83][b]Lasy[/b][/color] aby odblokować ten przedmiot.,Пройди [color=#7dff83][b]Ліса[/b][/color] щоб розблокувати цей предмет.,,
+UI_UNLOCKREQ_WORLDCOMPLETE_LAVENDERFIELDS,Complete [color=#e17dff][b]Lavender Fields[/b][/color] to unlock this item.,Пройди [color=#e17dff][b]Лавандовые Поля[/b][/color] чтобы разблокировать этот предмет.,Ukończ [color=#e17dff][b]Pola Lawendowe[/b][/color] aby odblokować ten przedmiot.,Пройди [color=#e17dff][b]Лавандові Поля[/b][/color] щоб розблокувати цей предмет.,,
+UI_UNLOCKREQ_COLLECTESSENCE,[b]{0}[/b] [color=yellow]Essence[/color] to unlock this item.,[b]{0}[/b] [color=yellow]Эссенции[/color] чтобы разблокировать этот предмет.,[b]{0}[/b] [color=yellow]Esencji[/color] aby odblokować ten przedmiot.,[b]{0}[/b] [color=yellow]Есенції[/color] щоб розблокувати цей предмет.,,
+UI_UNLOCKREQ_COMPLETEWORLDS,Complete all [b]{0}[/b] levels to unlock this item.,Пройди все [b]{0}[/b] уровней чтобы разблокировать этот предмет.,Ukończ wszystkie [b]{0}[/b] poziomów aby odblokować ten przedmiot.,Пройди усі [b]{0}[/b] рівнів щоб розблокувати цей предмет.,,
+UI_UNLOCKREQ_COLLECTFRAGMENTS,Collect [b]{0}[/b] [color=aqua]Fragments[/color] to unlock this item.,Собери [b]{0}[/b] [color=aqua]Фрагментов[/color] чтобы разблокировать этот предмет.,Zbierz [b]{0}[/b] [color=aqua]Fragmentów[/color] aby odblokować ten przedmiot.,Збери [b]{0}[/b] [color=aqua]Фрагментів[/color] щоб розблокувати цей предмет.,,
+UI_UNLOCKREQ_FIND_SEASIDE,You can find this item in [color=#7dd8ff][b]Seaside[/b][/color].,,,,,
+UI_UNLOCKREQ_FIND_FORESTS,You can find this item in [color=#7dff83][b]Forests[/b][/color].,,,,,
+UI_UNLOCKREQ_FIND_LAVENDERFIELDS,You can find this item in [color=#e17dff][b]Lavender Fields[/b][/color].,,,,,
+UI_UNLOCKED_COLOR,New Color Unlocked!,Получен Новый Цвет!,Odblokowano Nowy Kolor!,Отримано Новий Колір!,,
+UI_UNLOCKED_SKIN,New Skin Unlocked!,Получен Новый Скин!,Odblokowano Nową Skórkę!,Отримано Новий Скін!,,
+UI_UNLOCKED_TRAIL,New Trail Unlocked!,Получен Новый След!,Oblokowano Nową Ścieżkę!,Отримано Новий Слід!,,
+UI_UNLOCKED_FORESTS,“Forests” Unlocked!,“Леса” Уже Доступно!,“Lasy” Już Dostępne!,"""Ліси"" Вже Доступно!",,
+UI_UNLOCKED_FORESTS_DESCRIPTION,,,,,,
+UI_CUSTOMIZATION_CONFIRM_TITLE,Unlock this item?,Разблокировать этот предмет?,Odblokować ten przedmiot?,Розблокувати цей предмет?,UI_WORLD_FORESTS,
+UI_CUSTOMIZATION_CONFIRM,Confirm,Подтвердить,Potwierdź,Підтвердити,UI_WORLD_LAVENDERFIELDS,
+UI_CUSTOMIZATION_CANCEL,Cancel,Отменить,Anuluj,Відмінити,,
+,,,,,,
+,,,,,,
+,,,,,,
+UI_WORLD_SEASIDE,Seaside,Приморье,Wybrzeża,Узбережжя,,
+UI_WORLD_FORESTS,Forests,Леса,Lasy,Ліси,,
+UI_WORLD_LAVENDERFIELDS,Lavender Fields,Лавандовые Поля,Pola Lawendowe,Лавандові Поля,,
+UI_LEVEL,Level {0},Уровень {0},Poziom {0},Рівень {0},,
+UI_PAUSEMENU_ATTEMPTS,Attempts: {0},Попыток: {0},Prób: {0},Спроб: {0},,
+UI_PAUSEMENU_PAUSED,Paused,Пауза,Pauza,Пауза,UI_PLAYGAME_CAMPAIGN,
+UI_PAUSEMENU_CONTINUE,Continue,Продолжить,Kontynuuj,Продовжити,UI_PLAYGAME_CUSTOM,
+UI_PAUSEMENU_MAINMENU,Main Menu,Главное Меню,Menu Główne,Головне Меню,,
+,,,,,,
+,,,,,,
+UI_WORLD_ORDER,World {0},Мир {0},Świat {0},Світ {0},,
+,,,,,,
+UI_PLAYGAME_CAMPAIGN,Campaign,Кампания,Kampania,Кампанія,,
+UI_PLAYGAME_CUSTOM,Custom,Пользовательские,Społeczności,Користувальницькі,,
+UI_PLAYGAME_CAMPAIGN_DESC,"Jump Adventures’ standard campaign, created by the developers.","Стандартная кампания Jump Adventures, созданная разработчиками.",Domyślna kampania Jump Adventures stworzona przez twórców.,"Стандартна кампанія гри, створена розробниками.",,
+UI_PLAYGAME_CUSTOM_DESC,Custom campaigns created by the community.,"Пользовательские кампании, созданные сообществом.",Kampanie stworzone przez społeczność gry.,"Користувальницькі кампанії, створені спільнотою.",,
+,,,,,,
+,,,,,,
+UI_STATS_PLAYTIME,Play Time:,Время Игры:,Czas Gry:,Час Гри:,,
+UI_STATS_ATTEMPTS,Total Attempts:,Общее кол-во Попыток:,Prób w sumie:,Спроб загалом:,,
+UI_STATS_JUMPS,Total Jumps:,Прыжков:,Skoków:,Стрибки:,,
+UI_STATS_ESSENCE,Essence:,Эссенция:,Esencja:,Есенція:,,
+UI_STATS_FRAGMENTS,Fragments:,Фрагменты:,Fragmenty:,Фрагменти:,,
+UI_STATS_LEVELSCOMPLETE,Levels Complete:,Уровней Пройдено:,Ukończonych Poziomów:,Рівнів Пройдено:,,
+,,,,,,
+UI_NOTIFICATION_ESSENCEREMINDER,Items Ready to Unlock!,Предметы уже Доступны!,Przedmioty są Dostępne!,Предмети вже Доступні!,,
+UI_NOTIFICATION_ESSENCEREMINDER_DESC,Visit “Customization” to claim them! ,"Посети раздел ""Кастомизация"", чтобы получить их! ","Odwiedź sekcję “Dostosuj”, aby je odblokować! ","Відвідай розділ ""Кастомізація"", щоб отримати їх! ",,
+UI_NOTIFICATION_WORLDREADYTOUNLOCK,World Ready to Unlock!,Мир уже Доступен!,Świat już Dostępny!,Світ Тепер Доступний!,,
+UI_NOTIFICATION_WORLDREADYTOUNLOCK_DESC,“{0}” can now be unlocked!,"""{0}"" теперь можно разблокировать!","""{0}"" można teraz odblokować!","""{0}"" тепер можна розблокувати!",,
