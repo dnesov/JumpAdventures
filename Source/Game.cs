@@ -25,7 +25,8 @@ public class Game : Node
     public bool Campaign { get; set; } = true;
     public Level CurrentLevel { get => _currentLevel; private set { } }
     public string CurrentLevelString => $"w{CurrentWorld.Order + 1}l{CurrentWorld.GetLevelIdx(CurrentLevel) + 1}";
-    public GameState CurrentState { get => _currentState; private set { } }
+    public GameState CurrentState => _currentState;
+    public GameState StateBeforePause => _stateBeforePause;
     public bool SplashPlayed { get; set; } = false;
     public bool TimerActive { get; set; }
     public InputMethod LastInputMethod => _lastInputMethod;
@@ -70,9 +71,6 @@ public class Game : Node
         // do this interactively in a loading screen instead.
         WorldpackScanner.Scan("res://Levels/", false);
 
-        _logger.Info("Hello from a custom client!");
-
-
         PauseMode = PauseModeEnum.Process;
 
         SetGameMode(new AdventureGameMode());
@@ -86,8 +84,6 @@ public class Game : Node
         var unlocksDb = this.GetSingleton<UnlocksDatabase>();
         unlocksDb.OnUnlockableJustUnlocked += (_) => { _achievementProvider.CheckCompletionistAchievement(unlocksDb); };
 
-        var notificationManager = this.GetSingleton<NotificationManager>();
-        await notificationManager.AddNotification("Hello from custom client!", string.Empty);
 
         RegisterActivities();
         SetActivities("", "In The Menu");
@@ -164,6 +160,12 @@ public class Game : Node
         if (Input.IsActionJustPressed("screenshot"))
         {
             _debug.TakeScreenshot();
+        }
+
+        if (Input.IsActionJustPressed("debug_showlocales"))
+        {
+            TranslationServer.Clear();
+            GetTree().Notification(NotificationTranslationChanged);
         }
 
         // if (Input.IsActionJustPressed("open_feedback_form"))
@@ -257,8 +259,11 @@ public class Game : Node
         _currentState = GameState.InMenu;
 
         SetActivities("", "In The Menu");
+
         _sceneSwitcher.Load(Constants.NEW_MAIN_MENU_PATH, transition);
+
         ResetCurrentLevelProgress();
+
         StopPlaying();
     }
 
@@ -404,7 +409,9 @@ public class Game : Node
     {
         if (_currentState == GameState.Paused) return;
 
+        _stateBeforePause = _currentState;
         _currentState = GameState.Paused;
+
         OnPaused?.Invoke();
         GetTree().Paused = true;
         VisualServer.SetShaderTimeScale(0f);
@@ -415,10 +422,12 @@ public class Game : Node
     {
         if (_currentState != GameState.Paused) return;
         GetTree().Paused = false;
-        _currentState = GameState.Playing;
+        _currentState = _stateBeforePause;
         OnResumed?.Invoke();
         VisualServer.SetShaderTimeScale(1f);
-        StartTimer();
+
+        if (_currentState != GameState.PlayingOver)
+            StartTimer();
     }
 
     public void ForceRestartLevel()
@@ -554,6 +563,7 @@ public class Game : Node
     private Logger _logger = new Logger(nameof(Game));
     private Level _currentLevel;
     private GameState _currentState;
+    private GameState _stateBeforePause;
     private WorldpackScanner _worldpackScanner = new WorldpackScanner();
     private SceneSwitcher _sceneSwitcher;
     private ActivityHandler _activityHandler = new ActivityHandler();

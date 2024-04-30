@@ -16,7 +16,6 @@ namespace Jump.UI.Menu
             base._Ready();
 
             RectPivotOffset = RectSize / 2;
-            // _playIcon.RectPosition = new Vector2(64f, 0f);
 
             Connect("visibility_changed", this, nameof(VisibilityChanged));
 
@@ -83,40 +82,7 @@ namespace Jump.UI.Menu
 
         protected override void OnPressed()
         {
-            if (_unlockable != null)
-            {
-                if (_unlockDb.IsUnlocked(_unlockable.EntryId))
-                {
-                    fmodRuntime.PlayOneShot("event:/UI/WorldPress");
-                    OnPressedAction?.Invoke(Order - 1);
-                    return;
-                }
 
-                if (_unlockable.HasCondition<EssenceUnlockCondition>())
-                {
-                    var condition = _unlockable.GetCondition<EssenceUnlockCondition>();
-                    bool unlocked = _unlockDb.TryUnlock(_unlockable.EntryId);
-
-                    if (unlocked)
-                    {
-                        var progressHandler = this.GetSingleton<ProgressHandler>();
-                        progressHandler.Essence -= condition.EssenceRequired;
-
-                        fmodRuntime.PlayOneShot("event:/UI/Unlock");
-                        _essenceOverlay.Hide();
-
-                        var readyToUnlockOverlay = GetNode<Panel>("%ReadyToUnlockOverlay");
-                        readyToUnlockOverlay.Hide();
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
-            }
-
-            fmodRuntime.PlayOneShot("event:/UI/WorldPress");
-            OnPressedAction?.Invoke(Order - 1);
         }
 
         protected override void OnButtonDown()
@@ -127,6 +93,8 @@ namespace Jump.UI.Menu
         protected override void OnButtonUp()
         {
             PlayButtonUpAnimation();
+            UnlockOrOpenWorld();
+            AcceptEvent();
         }
 
         protected override void OnFocusEntered()
@@ -239,6 +207,44 @@ namespace Jump.UI.Menu
 
             tween.TweenProperty(_playIcon, "rect_position:x", 64f, tweenTime * 4f);
             tween.TweenProperty(_playIcon, "modulate:a", 0f, tweenTime * 4f);
+        }
+
+        private void UnlockOrOpenWorld()
+        {
+            if (_unlockable != null)
+            {
+                if (_unlockDb.IsUnlocked(_unlockable.EntryId))
+                {
+                    fmodRuntime.PlayOneShot("event:/UI/WorldPress");
+                    OnPressedAction?.Invoke(Order - 1);
+                    return;
+                }
+
+                if (_unlockable.HasCondition<EssenceUnlockCondition>())
+                {
+                    var condition = _unlockable.GetCondition<EssenceUnlockCondition>();
+                    bool unlocked = _unlockDb.TryUnlock(_unlockable.EntryId);
+
+                    if (unlocked)
+                    {
+                        var progressHandler = this.GetSingleton<ProgressHandler>();
+                        progressHandler.Essence -= condition.EssenceRequired;
+
+                        fmodRuntime.PlayOneShot("event:/UI/Unlock");
+                        _essenceOverlay.Hide();
+
+                        var readyToUnlockOverlay = GetNode<Panel>("%ReadyToUnlockOverlay");
+                        readyToUnlockOverlay.Hide();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+
+            fmodRuntime.PlayOneShot("event:/UI/WorldPress");
+            OnPressedAction?.Invoke(Order - 1);
         }
 
         private Tween _tween;

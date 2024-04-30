@@ -26,6 +26,19 @@ namespace Jump.UI
             _game.OnPaused -= OnPaused;
             _game.OnResumed -= OnResumed;
         }
+
+        public override void _Input(InputEvent @event)
+        {
+            var settingsSection = GetNode<SettingsSection>("%PauseSettingsSection");
+
+            if (!Visible || settingsSection.Visible) return;
+
+            if (@event.IsActionPressed("ui_cancel") && _game.LastInputMethod == InputMethod.Controller)
+            {
+                Resume();
+            }
+        }
+
         private void OnPaused() => Display();
         private void OnResumed()
         {
@@ -182,7 +195,7 @@ namespace Jump.UI
         protected override void OnUpdateElements(PauseMenuData data)
         {
             var attemptsFormatted = string.Format(Tr("UI_PAUSEMENU_ATTEMPTS"), data.Attempts);
-            var levelName = _game.CurrentWorld.IsUser ? data.CurrentLevelName : String.Format(Tr(data.CurrentLevelName), _game.CurrentWorld.GetLevelIdx(_game.CurrentLevel) + 1);
+            var levelName = _game.CurrentWorld.IsUser ? data.CurrentLevelName : string.Format(Tr(data.CurrentLevelName), _game.CurrentWorld.GetLevelIdx(_game.CurrentLevel) + 1);
 
             GetNode<Label>("%Attempts").Text = attemptsFormatted;
             GetNode<Label>("%WorldName").Text = data.CurrentWorldName;

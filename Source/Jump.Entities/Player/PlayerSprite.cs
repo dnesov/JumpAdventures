@@ -71,102 +71,6 @@ namespace Jump.Entities
             Position = _player.Position;
         }
 
-        private void Update(float delta)
-        {
-            Rotation = _targetRotation;
-
-            if (_player.IsOnFloor())
-                OnFloor(delta);
-
-            if (!_player.IsOnFloor())
-                NotOnFloor(delta);
-
-            UpdateEffects(Mathf.Abs(_player.Velocity.x));
-            _prevVelocity = _player.Velocity;
-        }
-
-        private void AnimatePosition(float delta)
-        {
-            Position = Position.LinearInterpolate(new Vector2(_player.Position.x, _player.Position.y), delta * 45f);
-        }
-
-        private void AnimateScale(float delta)
-        {
-            _targetScale.x = Mathf.Lerp(_targetScale.x, 1f, 1f - Mathf.Pow(_squishAndStretchExponent, delta));
-            _targetScale.y = Mathf.Lerp(_targetScale.y, 1f, 1f - Mathf.Pow(_squishAndStretchExponent, delta));
-
-            Scale = _targetScale * _initialScale;
-        }
-
-        private void AnimateRotation(float delta)
-        {
-            _targetRotation = Mathf.LerpAngle(_targetRotation + _jumpRotation, _surfaceAngle, delta * 10);
-            _jumpRotation = Mathf.LerpAngle(_jumpRotation, 0, delta * 10);
-        }
-
-        private void OnFloor(float delta)
-        {
-            var surfaceNormal = _player.GetFloorNormal();
-            var angle = GetSurfaceAngle(surfaceNormal);
-            _surfaceAngle = angle;
-
-            if (!_landed && _player.IsOnFloor())
-            {
-                _landed = true;
-
-                _targetScale.x = Mathf.RangeLerp(Mathf.Abs(_prevVelocity.y), 0, _player.MaxSpeed, _landSquashStrengthMin, _landSquashStrengthMax);
-                _targetScale.y = Mathf.RangeLerp(Mathf.Abs(_prevVelocity.y), 0, _player.MaxSpeed, _landSquashStrengthMax, _landSquashStrengthMin);
-            }
-        }
-
-        private void NotOnFloor(float delta)
-        {
-            _landed = false;
-
-            var initAngle = _player.GravityFlipped ? 180f : 0f;
-            initAngle = Mathf.Deg2Rad(initAngle);
-            _surfaceAngle = Mathf.LerpAngle(_surfaceAngle, initAngle, delta * 5);
-
-            Vector2 scale;
-            scale.y = Mathf.RangeLerp(Mathf.Abs(_player.Velocity.y), 0, Mathf.Abs(_player.JumpSpeed), _airStretchStrengthMin, _airStretchStrengthMax);
-            scale.x = Mathf.RangeLerp(Mathf.Abs(_player.Velocity.y), 0, Mathf.Abs(_player.JumpSpeed), _airStretchStrengthMax, _airStretchStrengthMin);
-
-            _targetScale = scale;
-        }
-
-        private float GetSurfaceAngle(Vector2 surfaceNormal)
-        {
-            return surfaceNormal.Angle() + Mathf.Pi / 2f;
-        }
-
-        public void UpdateCrackShader(float amount)
-        {
-            var material = (ShaderMaterial)Material;
-            material.SetShaderParam("damage_amount", amount);
-        }
-
-        public void SubscribeEvents()
-        {
-            _player.OnAnyJump += Jump;
-            _player.HealthHandler.OnAnyDamage += OnDamage;
-            _player.HealthHandler.OnDeath += OnDeath;
-            _player.OnAnyRespawn += OnRespawn;
-            _player.OnWin += OnWin;
-
-            _customizationHandler.OnPreferencesChanged += ApplyCustomization;
-        }
-
-        private void UnsubscribeEvents()
-        {
-            _player.OnAnyJump -= Jump;
-            _player.HealthHandler.OnAnyDamage -= OnDamage;
-            _player.HealthHandler.OnDeath -= OnDeath;
-            _player.OnAnyRespawn -= OnRespawn;
-            _player.OnWin -= OnWin;
-
-            _customizationHandler.OnPreferencesChanged -= ApplyCustomization;
-        }
-
         public void ApplyCustomization(CustomizationPreferences prefs)
         {
             var skinId = prefs.SkinId;
@@ -223,6 +127,104 @@ namespace Jump.Entities
             _adheasedParticles.Emitting = false;
         }
 
+        public void UpdateCrackShader(float amount)
+        {
+            var material = (ShaderMaterial)Material;
+            material.SetShaderParam("damage_amount", amount);
+        }
+
+        public void SubscribeEvents()
+        {
+            _player.OnAnyJump += Jump;
+            _player.HealthHandler.OnAnyDamage += OnDamage;
+            _player.HealthHandler.OnDeath += OnDeath;
+            _player.OnAnyRespawn += OnRespawn;
+            _player.OnWin += OnWin;
+
+            _customizationHandler.OnPreferencesChanged += ApplyCustomization;
+        }
+
+        private void Update(float delta)
+        {
+            Rotation = _targetRotation;
+
+            if (_player.IsOnFloor())
+                OnFloor();
+
+            if (!_player.IsOnFloor())
+                NotOnFloor(delta);
+
+            UpdateEffects(Mathf.Abs(_player.Velocity.x));
+            _prevVelocity = _player.Velocity;
+        }
+
+        private void AnimatePosition(float delta)
+        {
+            var factor = DeltaLerpFactor(delta, _positionLerpFactor);
+            GlobalPosition = GlobalPosition.LinearInterpolate(_player.GlobalPosition, factor);
+        }
+
+        private void AnimateScale(float delta)
+        {
+            _targetScale.x = Mathf.Lerp(_targetScale.x, 1f, 1f - Mathf.Pow(_squishAndStretchExponent, delta));
+            _targetScale.y = Mathf.Lerp(_targetScale.y, 1f, 1f - Mathf.Pow(_squishAndStretchExponent, delta));
+
+            Scale = _targetScale * _initialScale;
+        }
+
+        private void AnimateRotation(float delta)
+        {
+            var factor = DeltaLerpFactor(delta, _rotationLerpFactor);
+            _targetRotation = Mathf.LerpAngle(_targetRotation + _jumpRotation, _surfaceAngle, factor);
+            _jumpRotation = Mathf.LerpAngle(_jumpRotation, 0, factor);
+        }
+
+        private void OnFloor()
+        {
+            var surfaceNormal = _player.GetFloorNormal();
+            var angle = GetSurfaceAngle(surfaceNormal);
+            _surfaceAngle = angle;
+
+            if (!_landed && _player.IsOnFloor())
+            {
+                _landed = true;
+
+                _targetScale.x = Mathf.RangeLerp(Mathf.Abs(_prevVelocity.y), 0, _player.MaxSpeed, _landSquashStrengthMin, _landSquashStrengthMax);
+                _targetScale.y = Mathf.RangeLerp(Mathf.Abs(_prevVelocity.y), 0, _player.MaxSpeed, _landSquashStrengthMax, _landSquashStrengthMin);
+            }
+        }
+
+        private void NotOnFloor(float delta)
+        {
+            _landed = false;
+
+            var initAngle = _player.GravityFlipped ? 180f : 0f;
+            initAngle = Mathf.Deg2Rad(initAngle);
+            _surfaceAngle = Mathf.LerpAngle(_surfaceAngle, initAngle, delta * 5);
+
+            Vector2 scale;
+            scale.y = Mathf.RangeLerp(Mathf.Abs(_player.Velocity.y), 0, Mathf.Abs(_player.JumpSpeed), _airStretchStrengthMin, _airStretchStrengthMax);
+            scale.x = Mathf.RangeLerp(Mathf.Abs(_player.Velocity.y), 0, Mathf.Abs(_player.JumpSpeed), _airStretchStrengthMax, _airStretchStrengthMin);
+
+            _targetScale = scale;
+        }
+
+        private float GetSurfaceAngle(Vector2 surfaceNormal)
+        {
+            return surfaceNormal.Angle() + Mathf.Pi / 2f;
+        }
+
+        private void UnsubscribeEvents()
+        {
+            _player.OnAnyJump -= Jump;
+            _player.HealthHandler.OnAnyDamage -= OnDamage;
+            _player.HealthHandler.OnDeath -= OnDeath;
+            _player.OnAnyRespawn -= OnRespawn;
+            _player.OnWin -= OnWin;
+
+            _customizationHandler.OnPreferencesChanged -= ApplyCustomization;
+        }
+
         private void OnDamage(DamageType damageType)
         {
             var healthHandler = _player.HealthHandler;
@@ -256,9 +258,6 @@ namespace Jump.Entities
         {
             var dir = _player.InputDirection.Normalized();
 
-
-            _jumpDirection = dir;
-
             if (_player.GravityFlipped)
             {
                 _jumpRotation -= dir.x * Mathf.Deg2Rad(_jumpRotationDegrees);
@@ -274,13 +273,15 @@ namespace Jump.Entities
             var shouldEmit = playerSpeed > _player.MaxSpeed / 2;
             _walkParticles.Emitting = shouldEmit && _player.IsOnFloor();
             _currentTrail.Emitting = shouldEmit;
-            _currentTrail.Emitting = shouldEmit;
         }
 
+        private float DeltaLerpFactor(float delta, float factor) => Mathf.Clamp(delta * factor, 0f, 1f);
+
+        private float _positionLerpFactor = 45f;
+        private float _rotationLerpFactor = 10f;
         private Vector2 _initialScale;
         private bool _landed;
         private Vector2 _prevVelocity;
-        private Vector2 _jumpDirection;
         private Color _color;
         [Export] private NodePath _playerPath;
         [Export] private NodePath _walkParticlesPath;

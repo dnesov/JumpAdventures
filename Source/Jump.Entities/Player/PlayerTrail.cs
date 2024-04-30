@@ -16,6 +16,7 @@ namespace Jump.Entities
             {
                 _particles.Visible = false;
                 _particles.Emitting = false;
+                _particles.GlobalPosition = _parent.GlobalPosition;
             }
 
             SetAsToplevel(true);
@@ -28,6 +29,21 @@ namespace Jump.Entities
 
         public override void _PhysicsProcess(float delta)
         {
+            ProcessPoints();
+        }
+
+        public override void _Process(float delta)
+        {
+            base._Process(delta);
+
+            if (_hasParticles)
+            {
+                _particles.GlobalPosition = _parent.GlobalPosition;
+            }
+        }
+
+        private void ProcessPoints()
+        {
             AddPoint(_parent.GlobalPosition);
 
             while (GetPointCount() > _maxPointCount)
@@ -39,16 +55,6 @@ namespace Jump.Entities
             if (_hasParticles)
             {
                 _particles.Emitting = Emitting;
-            }
-        }
-
-        public override void _Process(float delta)
-        {
-            base._Process(delta);
-
-            if (_hasParticles)
-            {
-                _particles.GlobalPosition = _parent.GlobalPosition;
             }
         }
 

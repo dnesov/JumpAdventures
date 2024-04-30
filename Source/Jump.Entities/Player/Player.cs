@@ -103,7 +103,7 @@ namespace Jump.Entities
 
 #if DEBUG
             // yuck
-            var debugOverlayParent = this.GetSingleton<CanvasLayer>("DebugOverlay");
+            var debugOverlayParent = this.GetAutoload<CanvasLayer>("DebugOverlay");
             var debugOverlay = debugOverlayParent.GetNode<DebugOverlay>("ImGuiNode");
             debugOverlay.RegisterPlayer(this);
 #endif
@@ -133,6 +133,8 @@ namespace Jump.Entities
             GetInput();
             ProcessMovement(delta);
             KillIfOutOfBounds();
+
+            if (_game.CurrentState != GameState.Playing) return;
 
             if (_game.TimerActive == false && HasStarted())
             {
