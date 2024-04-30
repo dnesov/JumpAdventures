@@ -70,6 +70,9 @@ public class Game : Node
         // do this interactively in a loading screen instead.
         WorldpackScanner.Scan("res://Levels/", false);
 
+        _logger.Info("Hello from a custom client!");
+
+
         PauseMode = PauseModeEnum.Process;
 
         SetGameMode(new AdventureGameMode());
@@ -83,6 +86,8 @@ public class Game : Node
         var unlocksDb = this.GetSingleton<UnlocksDatabase>();
         unlocksDb.OnUnlockableJustUnlocked += (_) => { _achievementProvider.CheckCompletionistAchievement(unlocksDb); };
 
+        var notificationManager = this.GetSingleton<NotificationManager>();
+        await notificationManager.AddNotification("Hello from custom client!", string.Empty);
 
         RegisterActivities();
         SetActivities("", "In The Menu");
