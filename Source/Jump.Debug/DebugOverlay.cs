@@ -427,6 +427,7 @@ public class DebugOverlay : ImGuiNode
         if (ImGui.Begin("Game class Inspector"))
         {
             ImGui.LabelText(_game.CurrentState.ToString(), "State:");
+            ImGui.LabelText(_game.StateBeforePause.ToString(), "State Before Pause:");
             ImGui.LabelText(_game.TimerActive.ToString(), "Timer Active:");
             ImGui.LabelText(_game.Timer.ToString(), "Timer:");
             ImGui.LabelText(_game.TimerRunning.ToString(), "Timer Running:");

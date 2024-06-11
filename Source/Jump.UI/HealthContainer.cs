@@ -14,6 +14,8 @@ namespace Jump.UI
         {
             _player = GetOwner<Player>();
             await ToSignal(_player, "ready");
+
+            _healthHandler = _player.HealthHandler;
             SubscribeEvents();
 
             var customizationHandler = this.GetSingleton<CustomizationHandler>();
@@ -22,12 +24,23 @@ namespace Jump.UI
             Modulate = color;
         }
 
+        public override void _ExitTree()
+        {
+            UnsubscribeEvents();
+        }
+
         public void SubscribeEvents()
         {
-            _healthHandler = _player.HealthHandler;
             _player.HealthHandler.OnDamage += UpdateHealthSprites;
             _player.HealthHandler.OnDeath += UpdateOnDeath;
             _player.OnAnyRespawn += OnAnyRespawn;
+        }
+
+        private void UnsubscribeEvents()
+        {
+            _player.HealthHandler.OnDamage -= UpdateHealthSprites;
+            _player.HealthHandler.OnDeath -= UpdateOnDeath;
+            _player.OnAnyRespawn -= OnAnyRespawn;
         }
 
         private void OnAnyRespawn()
@@ -94,11 +107,6 @@ namespace Jump.UI
                 heart.Deduct();
             }
             _elements.Clear();
-        }
-
-        private void Shake(float force)
-        {
-
         }
 
         private Player _player;

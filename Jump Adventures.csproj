@@ -1,4 +1,4 @@
-<Project Sdk="Godot.NET.Sdk/3.3.0">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
         <RootNamespace>JumpAdventures</RootNamespace>
@@ -17,39 +17,19 @@
         <Reference Include="Steamworks.NET, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
             <SpecificVersion>False</SpecificVersion>
             <Link>Steamworks.NET.dll</Link>
-            <HintPath Condition=" '$(OS)' == 'Windows_NT' ">lib/steam/Windows-x64/Steamworks.NET.dll</HintPath>
+            <HintPath Condition=" '$(OS)' == 'Windows_NT' ">libraries/steam/Windows-x64/Steamworks.NET.dll</HintPath>
             <HintPath Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">lib/steam/OSX-Linux-x64/Steamworks.NET.dll</HintPath>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Reference>
 
-        <Content Include="lib/steam/Windows-x64/steam_api64.dll" Condition=" '$(OS)' == 'Windows_NT' ">
-            <Link>steam_api64.dll</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-
-        <Content Include="lib/steam/OSX-Linux-x64/libsteam_api.so" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">
-            <Link>libsteam_api.so</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <!-- /Steamworks.NET -->
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="bin/fmod/linux/*.*" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">
-            <Link>%(Filename)%(Extension)</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="bin/fmod/windows/*.*" Condition=" '$(OS)' == 'Windows_NT' ">
-            <Link>%(Filename)%(Extension)</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="bin/discord/linux/*.*" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">
-            <Link>%(Filename)%(Extension)</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="bin/discord/windows/*.*" Condition=" '$(OS)' == 'Windows_NT' ">
-            <Link>%(Filename)%(Extension)</Link>
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
+        <Reference Include="GodotSharp">
+            <HintPath>$(ProjectDir)/GodotSharp/Debug/GodotSharp.dll</HintPath>
+            <Private>True</Private>
+        </Reference>
+        <Reference Include="GodotSharpEditor">
+            <HintPath>$(ProjectDir)/GodotSharp/Debug/GodotSharpEditor.dll</HintPath>
+            <Private>True</Private>
+        </Reference>
     </ItemGroup>
 </Project>
   

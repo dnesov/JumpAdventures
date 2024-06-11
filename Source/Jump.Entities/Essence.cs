@@ -85,7 +85,7 @@ namespace Jump.Entities
             _tween.TweenProperty(this, "modulate", new Color(1, 1, 1, 0.0f), 0.25f);
             _tween.TweenCallback(this, nameof(Collect));
 
-            GetNode<Particles2D>("%CollectedParticles").Restart();
+            GetNode<Particles2D>("%EssenceCollectedParticles").Restart();
         }
 
         private void Collect()

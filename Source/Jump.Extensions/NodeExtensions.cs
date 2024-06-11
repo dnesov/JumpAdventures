@@ -15,7 +15,7 @@ namespace Jump.Extensions
             return node.GetTree().Root.GetNode<T>(typeof(T).Name);
         }
 
-        public static T GetSingleton<T>(this Node node, string name) where T : Node
+        public static T GetAutoload<T>(this Node node, string name) where T : Node
         {
             return node.GetTree().Root.GetNode<T>(name);
         }

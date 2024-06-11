@@ -17,6 +17,11 @@ namespace Jump.Entities
             SubscribeEvents();
         }
 
+        public override void _ExitTree()
+        {
+            UnsubscribeEvents();
+        }
+
         private void GetNodes() => _player = GetParent<Player>();
 
         private void ConnectSignals()
@@ -31,6 +36,12 @@ namespace Jump.Entities
         {
             _player.HealthHandler.OnDeath += OnDeath;
             _player.OnAnyRespawn += OnRespawn;
+        }
+
+        private void UnsubscribeEvents()
+        {
+            _player.HealthHandler.OnDeath -= OnDeath;
+            _player.OnAnyRespawn -= OnRespawn;
         }
 
         private void OnDeath() => DisableInteractions();
