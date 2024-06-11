@@ -16,6 +16,7 @@ mono_crash.*
 imgui.ini
 
 bin/
+obj/
 
 
 output.txt
@@ -29,3 +30,5 @@ godot-bin/
 Builds/
 Output/
 .env
+
+libraries/**/*.cs
